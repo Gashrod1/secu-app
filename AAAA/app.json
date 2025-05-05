@@ -1,0 +1,78 @@
+{
+  "expo": {
+    "name": "fcs-app",
+    "slug": "fcs-app",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/images/icon.png",
+    "scheme": "myapp",
+    "userInterfaceStyle": "automatic",
+    "newArchEnabled": true,
+    "ios": {
+      "supportsTablet": true
+    },
+    "android": {
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/images/adaptive-icon.png",
+        "backgroundColor": "#ffffff"
+      },
+      "package": "com.gashrod1.fcsapp"
+    },
+    "web": {
+      "bundler": "metro",
+      "output": "static",
+      "favicon": "./assets/images/favicon.png"
+    },
+    "plugins": [
+      "expo-router",
+      [
+        "expo-splash-screen",
+        {
+          "image": "./assets/images/splash.png",
+          "imageWidth": 200,
+          "resizeMode": "contain",
+          "backgroundColor": "#ffffff"
+        }
+      ],
+      [
+        "@bam.tech/react-native-app-security",
+        {
+          "sslPinning": {
+            "fcs.webservice.odeiapp.fr": [
+              "jb0DxEK3+kRHzAp4qLtrLzznFaz2OC8vxe3bzoNsoKo="
+            ]
+          },
+          "preventRecentScreenshots": {
+            "ios": { "enabled": true },
+            "android": { "enabled": true }
+          }
+        }
+      ],
+      [
+        "expo-build-properties",
+        {
+          "android": {
+            "kotlinVersion": "1.9.25"
+          }
+        }
+      ],
+      [
+        "expo-secure-store",
+        {
+          "configureAndroidBackup": true
+        }
+      ]
+    ],
+    "experiments": {
+      "typedRoutes": true
+    },
+    "extra": {
+      "router": {
+        "origin": false
+      },
+      "eas": {
+        "projectId": "899887df-ee0e-413c-a539-f36b22ec72e4"
+      }
+    }
+  }
+}
